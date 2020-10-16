@@ -76,6 +76,9 @@ for e in range(epochs):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+        
+        if i==2:
+            break
 
     print(e, loss.item())
 
