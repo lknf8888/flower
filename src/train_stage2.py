@@ -9,6 +9,13 @@ from torch.utils.data import DataLoader
 from efficientnet_pytorch import EfficientNet
 from flower import Flower
 
+class Reshape(nn.Module):
+    def __init__(self, *args):
+        super(Reshape, self).__init__()
+        self.shape = args
+
+    def forward(self, x):
+        return x.view(self.shape)
 
 n_class = int(os.getenv('N_CLASS'))
 epochs = int(os.getenv('N_EPOCH'))
