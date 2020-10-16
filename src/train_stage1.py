@@ -22,6 +22,7 @@ epochs = int(os.getenv('N_EPOCH'))
 batch_size = int(os.getenv('BATCH_SIZE'))
 data_dir = os.getenv('DATA_FOLDER')
 save_interval = int(os.getenv('SAVE_INTERVAL'))
+log_interval = int(os.getenv('LOG_INTERVAL'))
 save_path = os.getenv('SAVE_PATH')
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
@@ -79,8 +80,9 @@ for e in range(epochs):
         
         if i==2:
             break
-
-        print(e, i, loss.item())
+        
+        if i%log_interval == 0:
+            print(e, i, loss.item())
 
     if e%save_interval == 0:
         torch.save(model.state_dict(), os.path.join(save_path, 'stage1_epoch-{}'.format(e) + '.pth'))
