@@ -60,6 +60,7 @@ train {
         N_EPOCH = "10"
         BATCH_SIZE = "4"
         SAVE_INTERVAL = "2"
+        LOG_INTERVAL = "100"
         SAVE_PATH = "/artefact/"
         IMAGE_SIZE = "224"
     }
