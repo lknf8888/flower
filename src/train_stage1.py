@@ -52,6 +52,8 @@ model.to(device)
 '''-----------------MODEL------------------------'''
 
 '''-------------------TRAINING----------------------------'''
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.5)
 
 dataset_path = '%s/flower_photos'%data_dir
 
