@@ -55,7 +55,7 @@ model.to(device)
 
 dataset_path = 'dataset/%s'%data_dir
 
-trainset = Johnson(path=dataset_path,mode='train')
+trainset = Flower(path=dataset_path,mode='train')
 train_loader = DataLoader(dataset=trainset,
                           batch_size=batch_size,
                           shuffle=True, num_workers=8)
