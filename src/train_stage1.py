@@ -80,7 +80,7 @@ for e in range(epochs):
         if i==2:
             break
 
-    print(e, loss.item())
+        print(e, i, loss.item())
 
     if e%save_interval == 0:
         torch.save(model.state_dict(), os.path.join(save_path, 'stage1_epoch-{}'.format(e) + '.pth'))
