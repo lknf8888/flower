@@ -53,7 +53,7 @@ model.to(device)
 
 '''-------------------TRAINING----------------------------'''
 
-dataset_path = 'dataset/%s'%data_dir
+dataset_path = '%s/flower_photos'%data_dir
 
 trainset = Flower(path=dataset_path,mode='train')
 train_loader = DataLoader(dataset=trainset,
