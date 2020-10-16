@@ -21,7 +21,9 @@ train {
         install = ["pip3 install -r src/requirements.txt"]
         script = [
             {
-                sh = ["python3 src/train_stage1.py"]
+                sh = ["python3 dataset/download.py",
+                      "python3 src/train_stage1.py"
+                     ]
             }
         ]
 
@@ -38,7 +40,7 @@ train {
         install = ["pip3 install -r src/requirements.txt"]
         script = [
             {
-                sh = ["python3 src/train_stage2.py"]
+                sh = ["python3 dataset/download.py", "python3 src/train_stage2.py"]
             }
         ]
 
