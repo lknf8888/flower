@@ -28,9 +28,8 @@ train {
         ]
 
         resources {
-            cpu = "1"
+            cpu = "8"
             memory = "8G"
-            gpu = "1"
         }
         depends_on = ["get_dataset"]
     }
@@ -45,9 +44,8 @@ train {
         ]
 
         resources {
-            cpu = "1"
+            cpu = "8"
             memory = "8G"
-            gpu = "1"
         }
         depends_on = ["train1"]
     }
