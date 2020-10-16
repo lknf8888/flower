@@ -36,7 +36,7 @@ train {
     }
 
     step train2 {
-        image = "nvidia/cuda:10.0-base"
+        image = "python:3.7"
         install = ["pip3 install -r src/requirements.txt"]
         script = [
             {
@@ -61,5 +61,6 @@ train {
         BATCH_SIZE = "4"
         SAVE_INTERVAL = "2"
         SAVE_PATH = "/artefact/"
+        IMAGE_SIZE = "224"
     }
 }
