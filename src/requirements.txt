@@ -6,3 +6,4 @@ Pillow==7.2.0
 matplotlib
 comet_ml
 efficientnet_pytorch
+gdown
