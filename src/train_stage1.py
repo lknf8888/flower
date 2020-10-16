@@ -4,6 +4,7 @@ import os
 import torch
 from torch.nn.functional import cross_entropy
 from torch.nn import CrossEntropyLoss
+import torch.nn as nn
 from torch.utils.data import DataLoader
 
 from flower import Flower
