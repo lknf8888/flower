@@ -2,7 +2,7 @@ import gdown
 import os
 
 url = 'https://drive.google.com/uc?id=%s'%os.getenv('DATASET')
-output = os.path.join('/app',os.getenv('DATA_DIR'))
+output = os.path.join('/app',os.getenv('DATA_FOLDER'))
 gdown.download(url, '/app/flower_photos.tgz', quiet=False)
 
 os.system('mkdir %s'%output)
