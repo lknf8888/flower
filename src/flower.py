@@ -12,7 +12,8 @@ class Flower(Dataset):
         labels = []
 
         folders = os.listdir(path)
-
+        label = 0
+        
         for f in folders:
             foldername = os.path.join(path,f)
             if not os.path.isdir(foldername):
@@ -20,12 +21,12 @@ class Flower(Dataset):
 
             files = os.listdir(foldername)
 
-            label = int(f)
             for name in files:
                 fname = os.path.join(foldername, name)
 
                 labels.append(label)
                 filenames.append(fname)
+            label+=1
 
         self.filenames = filenames
         self.labels = labels
