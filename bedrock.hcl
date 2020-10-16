@@ -53,7 +53,7 @@ train {
 
     parameters {
         DATASET = "1hHulJlmOznP4YK9ppC41rCkSVtkW7J-K"
-        DATA_FOLDER = "dataset/flower"
+        DATA_FOLDER = "/artefact/dataset/flower"
         N_CLASS = "5"
         N_EPOCH = "10"
         BATCH_SIZE = "32"
