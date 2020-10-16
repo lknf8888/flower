@@ -8,3 +8,5 @@ gdown.download(url, '/app/flower_photos.tgz', quiet=False)
 os.makedirs(output)
 os.system('tar -xzvf /app/flower_photos.tgz -C %s'%output)
 os.system('ls -al %s'%output)
+
+print('finished')
