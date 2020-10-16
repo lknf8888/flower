@@ -22,7 +22,9 @@ epochs = int(os.getenv('N_EPOCH'))
 batch_size = int(os.getenv('BATCH_SIZE'))
 data_dir = os.getenv('DATA_FOLDER')
 save_interval = int(os.getenv('SAVE_INTERVAL'))
+log_interval = int(os.getenv('LOG_INTERVAL'))
 save_path = os.getenv('SAVE_PATH')
+image_size = int(os.getenv('IMAGE_SIZE'))
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -55,7 +57,7 @@ lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.5
 
 dataset_path = '%s/flower_photos'%data_dir
 
-trainset = Flower(path=dataset_path,mode='train')
+trainset = Flower(path=dataset_path, shape=[image_size,image_size], mode='train')
 train_loader = DataLoader(dataset=trainset,
                           batch_size=batch_size,
                           shuffle=True, num_workers=8)
@@ -75,7 +77,8 @@ for e in range(epochs):
         loss.backward()
         optimizer.step()
 
-        print(e, i, loss.item())
+        if i%log_interval ==0:
+            print(e, i, loss.item())
 
     if e%save_interval == 0:
         torch.save(model.state_dict(), os.path.join(save_path, 'stage2_epoch-{}'.format(e) + '.pth'))
