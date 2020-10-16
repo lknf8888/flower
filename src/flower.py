@@ -15,7 +15,7 @@ class Flower(Dataset):
 
         for f in folders:
             foldername = os.path.join(path,f)
-            if not if os.path.isdir(foldername):
+            if not os.path.isdir(foldername):
                 continue
 
             files = os.listdir(foldername)
