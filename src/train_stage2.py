@@ -75,7 +75,7 @@ for e in range(epochs):
         loss.backward()
         optimizer.step()
 
-    print(e, loss.item())
+        print(e, i, loss.item())
 
     if e%save_interval == 0:
         torch.save(model.state_dict(), os.path.join(save_path, 'stage2_epoch-{}'.format(e) + '.pth'))
