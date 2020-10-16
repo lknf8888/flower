@@ -56,7 +56,7 @@ train {
         DATA_FOLDER = "dataset/flower"
         N_CLASS = "5"
         N_EPOCH = "10"
-        BATCH_SIZE = "32"
+        BATCH_SIZE = "8"
         SAVE_INTERVAL = "2"
         SAVE_PATH = "/artefact/"
     }
