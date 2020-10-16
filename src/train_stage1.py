@@ -16,7 +16,7 @@ class Reshape(nn.Module):
 
     def forward(self, x):
         return x.view(self.shape)
-        
+
 n_class = int(os.getenv('N_CLASS'))
 epochs = int(os.getenv('N_EPOCH'))
 batch_size = int(os.getenv('BATCH_SIZE'))
@@ -32,6 +32,7 @@ multi_gpus = device==torch.device('cuda') and torch.cuda.device_count() > 1
 '''-----------------MODEL------------------------'''
 enet_model = 'efficientnet-b0'
 feat_size = 1280
+use_bias = True
 
 model = nn.Sequential(
     EfficientNet.from_pretrained(enet_model, include_top=False,),
