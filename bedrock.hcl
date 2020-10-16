@@ -58,6 +58,6 @@ train {
         N_EPOCH = "10"
         BATCH_SIZE = "32"
         SAVE_INTERVAL = "2"
-        SAVE_PATH = "checkpoints"
+        SAVE_PATH = "/artefact/"
     }
 }
