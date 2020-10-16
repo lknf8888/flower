@@ -68,7 +68,7 @@ for e in range(epochs):
         x = x.to(device)
         y = y.to(device)
 
-        logits = model(x_query)
+        logits = model(x)
         loss = cross_entropy(logits,y)
 
         optimizer.zero_grad()
