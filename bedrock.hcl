@@ -6,7 +6,7 @@ train {
         install = ["pip3 install -r dataset/requirements.txt"]
         script = [
             {
-                sh = ["python3 download.py"]
+                sh = ["python3 dataset/download.py"]
             }
         ]
 
