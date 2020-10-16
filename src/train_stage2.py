@@ -9,12 +9,12 @@ from torch.utils.data import DataLoader
 from flower import Flower
 
 
-n_class = int(os.getenv['N_CLASS'])
-epochs = int(os.getenv['N_EPOCH'])
-batch_size = int(os.getenv['BATCH_SIZE'])
-data_dir = os.getenv['DATA_FOLDER']
-save_interval = int(os.getenv['SAVE_INTERVAL'])
-save_path = os.getenv['SAVE_PATH']
+n_class = int(os.getenv('N_CLASS'))
+epochs = int(os.getenv('N_EPOCH'))
+batch_size = int(os.getenv('BATCH_SIZE'))
+data_dir = os.getenv('DATA_FOLDER')
+save_interval = int(os.getenv('SAVE_INTERVAL'))
+save_path = os.getenv('SAVE_PATH')
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
